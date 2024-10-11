@@ -5,12 +5,14 @@ public class Payment {
     private int orderId;
     private double amount;
     private Date paymentDate;
+    private PaymentMethod paymentMethod;
 
-    public Payment(int paymentId, int orderId, double amount) {
+    public Payment(int paymentId, int orderId, double amount, PaymentMethod paymentMethod) {
         this.paymentId = paymentId;
         this.orderId = orderId;
         this.amount = amount;
         this.paymentDate = new Date();
+        this.paymentMethod = paymentMethod;
     }
 
     public int getPaymentId() {
@@ -29,6 +31,10 @@ public class Payment {
         return paymentDate;
     }
 
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
     @Override
     public String toString() {
         return "Payment{" +
@@ -36,6 +42,7 @@ public class Payment {
                 ", orderId=" + orderId +
                 ", amount=" + amount +
                 ", paymentDate=" + paymentDate +
+                ", paymentMethod=" + paymentMethod +
                 '}';
     }
 }

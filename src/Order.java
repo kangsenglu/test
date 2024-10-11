@@ -2,13 +2,13 @@ public class Order {
     private int orderId;
     private String productName;
     private double amount;
-    private boolean isPaid;
+    private OrderStatus status;
 
     public Order(int orderId, String productName, double amount) {
         this.orderId = orderId;
         this.productName = productName;
         this.amount = amount;
-        this.isPaid = false;
+        this.status = OrderStatus.PENDING;
     }
 
     public int getOrderId() {
@@ -23,12 +23,12 @@ public class Order {
         return amount;
     }
 
-    public boolean isPaid() {
-        return isPaid;
+    public OrderStatus getStatus() {
+        return status;
     }
 
-    public void setPaid(boolean paid) {
-        isPaid = paid;
+    public void setStatus(OrderStatus status) {
+        this.status = status;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class Order {
                 "orderId=" + orderId +
                 ", productName='" + productName + '\'' +
                 ", amount=" + amount +
-                ", isPaid=" + isPaid +
+                ", status=" + status +
                 '}';
     }
 }
